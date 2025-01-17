@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    networks:
+      - laravel
+    environment:
+      APP_ENV: 'production'
+      APP_DEBUG: 'false'
+      APP_KEY: 'base64:d6rlutwZC2dRhoOMpcrX/xh3hkW00fjcaH4Fw+kQWD8='
+      DB_CONNECTION: 'mysql'
+      DB_HOST: '54.227.99.5'
+      DB_PORT: '3306'
+      DB_DATABASE: 'sitetransition'
+      DB_USERNAME: 'forge'
+      DB_PASSWORD: 'OMdrIKysPtzxdDhX3jU8'
+
+  nginx:
+    image: nginx:alpine
+    container_name: laravel_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/var/www
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - laravel
+
+  redis:
+    image: redis:alpine
+    container_name: laravel_redis
+    restart: unless-stopped
+    networks:
+      - laravel
+
+networks:
+  laravel:
