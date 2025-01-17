@@ -49,7 +49,7 @@ const BlogClient = ({posts, featuredPost}: { posts: Post[]; featuredPost: Post |
                             <div style={{flex: 4, marginBottom: '24px'}}>
                                 <Image className="article-image"
                                      onClick={() => handlePostClick(featuredPost.slug)}
-                                     src={'https://api.breakingmedia.ai/storage/' + featuredPost.image || 'https://via.placeholder.com/900x600'}
+                                     src={'https://api.breakingmedia.ai/storage/blog-images/3.jpg'}
                                      alt={featuredPost.title}/>
                             </div>
                             <div style={{flex: 3}}>
