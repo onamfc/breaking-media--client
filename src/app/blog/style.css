@@ -28,10 +28,13 @@ article#featured-article img {
     object-position: center;
 }
 
-
+#featured-article--content {
+    display: block;
+    max-height: initial;
+}
 
 @media (min-width: 769px) {
-    article#featured-article img {
+    #featured-article img {
         max-height: 400px;
         display: flex;
         flex-direction: row;
@@ -155,10 +158,7 @@ h2:hover {
     img.article-image {
         height: auto;
     }
-    article#featured-article--content {
-        display: block;
-        max-height: initial;
-    }
+
     article#featured-article img {
         height: auto;
     }
