@@ -45,7 +45,7 @@ const BlogClient = ({posts, featuredPost}: { posts: Post[]; featuredPost: Post |
             <section id="post-wrapper">
                 {featuredPost && (
                     <article id="featured-article">
-                        <div style={{display: 'flex', flexDirection: 'row', maxHeight: '400px'}}>
+                        <div id="featured-article--content">
                             <div style={{flex: 4, marginBottom: '24px'}}>
                                 <Image className="article-image"
                                      onClick={() => handlePostClick(featuredPost.slug)}
