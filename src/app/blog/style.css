@@ -28,16 +28,6 @@ article#featured-article img {
     object-position: center;
 }
 
-
-
-@media (min-width: 769px) {
-    #featured-article img {
-        max-height: 400px;
-        display: flex;
-        flex-direction: row;
-    }
-}
-
 img.article-image {
     width: 100%;
     height: 200px;
@@ -188,5 +178,12 @@ h2:hover {
 
     .article-content p {
         font-size: 0.9rem;
+    }
+}
+@media (min-width: 769px) {
+    #featured-article img {
+        max-height: 400px;
+        display: flex;
+        flex-direction: row;
     }
 }
