@@ -112,7 +112,16 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
         <>
             <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
             <div className="container mx-auto px-4 max-w-[1170px] pb-[80px] pt-2.5">
-                <div className="w-full">
+                <div
+                    className="relative mx-auto"
+                    style={{
+                        maxWidth: "1170px",
+                        maxHeight: "571px",
+                        width: "100%",
+                        height: "auto",
+                        overflow: "hidden",
+                    }}
+                >
                     <Image
                         src={
                             post.image
@@ -120,7 +129,10 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
                                 : 'https://via.placeholder.com/1920x1080'
                         }
                         alt={post.title}
-                        className="w-full h-[571px] object-cover"
+                        layout="responsive"
+                        width={1170} // Maximum width
+                        height={571} // Maximum height
+                        objectFit="cover" // Ensures image covers container but maintains aspect ratio
                     />
                 </div>
 
@@ -153,7 +165,20 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
                     <div className="w-[300px]">
                         <div
                             className="flex items-center text-2xl w-20 h-20 rounded-full object-cover bg-gray-700 text-white justify-center align-middle"
-                        >{getInitials(post.author?.name)}</div>
+                        >
+
+                            {
+                                post.author?.photo ? (
+                                    <Image
+                                        src={`https://api.breakingmedia.ai/storage/${post.author?.photo}`}
+                                        alt={post.author?.name}
+                                        width={80}
+                                        height={80}
+                                        className="rounded-full"
+                                    />
+                                ) : getInitials(post.author?.name)
+                            }
+                        </div>
                     </div>
 
                     {/* Author Info */}

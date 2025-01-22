@@ -1,29 +1,13 @@
 'use client';
 import React, {useMemo} from 'react';
-import {useRouter} from 'next/navigation';
 import "./style.css";
-import {Oswald} from 'next/font/google';
 import Image from "next/image";
+import FeaturedPost from "@/app/components/featuredPost/featured";
+import {Post} from "@/app/interface/post";
+import {useHandlePostClick} from "@/app/helpers";
 
-interface Post {
-    id: number;
-    title: string;
-    excerpt: string;
-    html?: string;
-    image?: string;
-    slug: string;
-    category?: {
-        name: string;
-    };
-    author?: {
-        name: string;
-    };
-    date?: string;
-}
-
-const oswald = Oswald({subsets: ['latin'], weight: ['400', '700']});
 const BlogClient = ({posts, featuredPost}: { posts: Post[]; featuredPost: Post | null }) => {
-    const router = useRouter();
+    const handlePostClick = useHandlePostClick();
     const groupedPosts = useMemo(() => {
         return posts.reduce((acc: Record<string, Post[]>, post: Post) => {
             const categoryName = post.category?.name || 'Uncategorized';
@@ -35,35 +19,13 @@ const BlogClient = ({posts, featuredPost}: { posts: Post[]; featuredPost: Post |
         }, {});
     }, [posts]);
 
-    const handlePostClick = (slug: string) => {
-        // Navigate to the single post page
-        router.push(`/blog/${slug}`);
-    };
+
 
     return (
         <div id="post-container">
             <section id="post-wrapper">
                 {featuredPost && (
-                    <article id="featured-article">
-                        <div id="featured-article--content">
-                            <div style={{flex: 4, marginBottom: '24px'}}>
-                                <Image className="article-image"
-                                     onClick={() => handlePostClick(featuredPost.slug)}
-                                     src={'https://api.breakingmedia.ai/storage/' + featuredPost.image || 'https://via.placeholder.com/900x600'}
-                                     alt={featuredPost.title}/>
-                            </div>
-                            <div style={{flex: 3}}>
-                                <div className="article-content">
-                                    <span className="post-category">{featuredPost.category?.name}</span>
-                                    <h2 onClick={() => handlePostClick(featuredPost.slug)}
-                                        className={oswald.className}>{featuredPost.title}
-                                    </h2>
-                                    <div className="post-excerpt">{featuredPost.excerpt}</div>
-                                    <span className="author">{featuredPost.author?.name}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                    <FeaturedPost featuredPost={featuredPost} />
                 )}
 
                 {Object.entries(groupedPosts).map(([category, categoryPosts]) => (
@@ -77,6 +39,10 @@ const BlogClient = ({posts, featuredPost}: { posts: Post[]; featuredPost: Post |
                                 <article className="post" key={post.id}>
                                     <Image
                                         className="article-image"
+                                        layout="responsive"
+                                        width={360} // Maximum width
+                                        height={240} // Maximum height
+                                        objectFit="cover"
                                         onClick={() => handlePostClick(post.slug)}
                                         src={
                                             'https://api.breakingmedia.ai/storage/' + post.image || 'https://via.placeholder.com/1920x1080'
