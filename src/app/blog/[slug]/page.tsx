@@ -162,7 +162,7 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
 
                 <div className="flex items-start gap-4 border-t border-gray-200 pt-8">
                     {/* Author Photo */}
-                    <div className="w-[300px]">
+                    <div className="w-[120px]">
                         <div
                             className="flex items-center text-2xl w-20 h-20 rounded-full object-cover bg-gray-700 text-white justify-center align-middle"
                         >
