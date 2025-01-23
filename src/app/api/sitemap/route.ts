@@ -6,7 +6,7 @@ export async function GET() {
     // Define static pages
     const staticPages = ['', 'about', 'donate', 'articles'];
 
-    // Fetch articles from your API
+    // Fetch dynamic articles from your API
     const posts = await fetch('https://api.breakingmedia.ai/posts')
         .then((res) => res.json())
         .catch(() => []);
@@ -34,11 +34,21 @@ export async function GET() {
     `)
         .join('');
 
-    // Combine static and dynamic URLs into a single sitemap
+    // Add RSS feed to the sitemap
+    const rssSitemap = `
+        <url>
+            <loc>${baseUrl}/api/rss</loc>
+            <changefreq>hourly</changefreq>
+            <priority>0.9</priority>
+        </url>
+    `;
+
+    // Combine static pages, articles, and RSS feed into the final sitemap
     const sitemap = `
         <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
             ${staticSitemap}
             ${articlesSitemap}
+            ${rssSitemap}
         </urlset>
     `;
 
