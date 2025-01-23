@@ -35,6 +35,7 @@ export default function RootLayout({
                 strategy="afterInteractive"
             />
             <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/api/rss" />
+            <link rel="sitemap" type="application/xml" title="Sitemap" href="/api/sitemap" />
         </head>
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}

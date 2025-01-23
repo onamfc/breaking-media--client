@@ -2,8 +2,5 @@
 User-agent: *
 Allow: /
 
-# Host
-Host: https://breakingmedia.ai
-
 # Sitemaps
-Sitemap: https://breakingmedia.ai/sitemap.xml
+Sitemap: https://breakingmedia.ai/api/sitemap
