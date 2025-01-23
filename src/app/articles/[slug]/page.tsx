@@ -88,11 +88,11 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
 
     const structuredData = {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
+        "@type": "NewsArticle",
         headline: post.title,
         image: post.image
             ? `https://api.breakingmedia.ai/storage/${post.image}`
-            : 'https://via.placeholder.com/1920x1080',
+            : 'https://breakingmedia.ai/breakingMediaLogo.png',
         author: {
             "@type": "Person",
             name: post.author?.name,
@@ -100,11 +100,19 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
         },
         datePublished: post.created_at,
         dateModified: post.updated_at || post.created_at,
+        publisher: {
+            "@type": "Organization",
+            "name": "breakingmedia.ai",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://breakingmedia.ai/breakingMediaLogo.png"
+            }
+        },
         articleSection: post.category?.name,
         description: post.excerpt,
         mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": `https://mediasource.ai/blog/`,
+            "@id": `https://breakingmedia.ai/articles/${post.slug}`,
         },
     };
 
