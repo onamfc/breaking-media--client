@@ -1,5 +1,5 @@
 import React from 'react';
-import BlogClient from '@/app/blog/blogClient';
+import BlogClient from '@/app/articles/blogClient';
 
 interface Post {
     id: number;

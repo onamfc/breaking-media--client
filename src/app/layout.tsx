@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     title: "Breaking Media",
-    description: "Breaking Media is a dynamic blog platform that delivers engaging articles on diverse topics. The site utilizes cutting-edge AI technology to generate and manage content, offering readers a seamless browsing experience. Breaking Media prioritizes inclusivity and diverse storytelling, alongside other progressive themes. With real-time API-driven content updates, the platform ensures fresh and relevant articles tailored to the interests of its audience.",
+    description: "Breaking Media is a dynamic editorial platform that delivers engaging articles on diverse topics. The site utilizes cutting-edge AI technology to generate and manage content, offering readers a seamless browsing experience. Breaking Media prioritizes inclusivity and diverse storytelling, alongside other progressive themes. With real-time API-driven content updates, the platform ensures fresh and relevant articles tailored to the interests of its audience.",
 };
 
 export default function RootLayout({
@@ -33,6 +33,7 @@ export default function RootLayout({
                 type="application/javascript"
                 strategy="afterInteractive"
             />
+            <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/api/rss" />
         </head>
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}

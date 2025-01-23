@@ -36,14 +36,14 @@ export async function generateMetadata(props: {
                 images: post.image
                     ? `https://api.breakingmedia.ai/storage/${post.image}`
                     : 'https://via.placeholder.com/1920x1080',
-                url: `https://api.breakingmedia.ai/blog/${slug}`,
+                url: `https://api.breakingmedia.ai/articles/${slug}`,
                 type: 'article',
             },
         };
     } catch (error) {
         return {
-            title: 'Blog Post Not Found',
-            description: 'We could not load the content for this blog post.',
+            title: 'Article Post Not Found',
+            description: 'We could not load the content for this article post.',
         };
     }
 }
@@ -80,7 +80,7 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
             <div className="container mx-auto px-4 max-w-[1000px] pb-[80px]">
                 <h1 className="text-2xl font-bold text-red-500">Post Not Found</h1>
                 <p className="text-gray-600">
-                    We couldn't retrieve the requested blog post. Please try again later.
+                    We couldn't retrieve the requested article post. Please try again later.
                 </p>
             </div>
         );

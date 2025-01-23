@@ -18,7 +18,7 @@ const  Logo = (props: Props) => {
     const highlightColor = "#CD2C02";
 
     return (
-        <LogoContainer onClick={() => router.push(`/blog`)}>
+        <LogoContainer onClick={() => router.push(`/articles`)}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlSpace="preserve"

@@ -4,7 +4,7 @@ export const useHandlePostClick = () => {
     const router = useRouter();
 
     return (slug: string) => {
-        router.push(`/blog/${slug}`);
+        router.push(`/articles/${slug}`);
     };
 };
 

@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
             <div className="flex justify-center flex-col">
                 <Logo version={'light'} width={180}/>
                 <p style={{fontSize: '.750rem', letterSpacing: '.0625em', marginTop: '12px'}}>
-                    This blog showcases the capabilities of artificial intelligence by generating all
+                    This website showcases the capabilities of artificial intelligence by generating all
                     editorial content on this website for entertainment purposes. Curious to learn more? <a
                     href="#">More to come&hellip;</a>
                 </p>

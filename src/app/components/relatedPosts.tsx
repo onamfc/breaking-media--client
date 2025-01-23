@@ -31,7 +31,7 @@ const RelatedPosts: React.FC<{ relatedPosts: Post[] }> = ({ relatedPosts }) => {
                                     {relatedPost.category?.name || 'Uncategorized'}
                                 </p>
                                 <a
-                                    href={`/blog/${relatedPost.slug}`}
+                                    href={`/articles/${relatedPost.slug}`}
                                     className="hover:underline block font-bold pb-1.5 text-[14px]"
                                 >
                                     {relatedPost.title}
