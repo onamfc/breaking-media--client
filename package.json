@@ -10,6 +10,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.1.0",
     "axios": "^1.7.9",
     "babel-plugin-styled-components": "^2.1.4",
     "markdown-it": "^14.1.0",
