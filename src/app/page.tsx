@@ -12,7 +12,7 @@ export default function Home() {
                 </div>
                 <ul className="list-inside text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
                     <li className="mb-2 md:pr-72">
-                        At BREAKING Media, we merge cutting-edge artificial intelligence with compelling storytelling to redefine how the world consumes content. Our AI-driven platform doesn’t just report stories—it evolves with them, delivering personalized, impactful narratives that inform, inspire, and ignite action.
+                        At breakingmedia.ai, we merge cutting-edge artificial intelligence with compelling storytelling to redefine how the world consumes content. Our AI-driven platform doesn’t just report stories—it evolves with them, delivering personalized, impactful narratives that inform, inspire, and ignite action.
                         Ready to experience the future of media?
                     </li>
                 </ul>
@@ -25,24 +25,9 @@ export default function Home() {
                     >
                         See it in action
                     </Link>
-                    <Link
-                        className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-                        href="/about"
-                        target="_self"
-                    >
-                        How it works
-                    </Link>
                 </div>
             </main>
-            <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-                <Link
-                    className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                    href="/donate"
-                    target="_self"
-                >
-                    Donate
-                </Link>
-            </footer>
+            <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
         </div>
     );
 }
