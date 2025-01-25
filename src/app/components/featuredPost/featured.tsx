@@ -10,7 +10,7 @@ const FeaturedPost = ({featuredPost}: {featuredPost: Post}) => {
     return (
         <article id="featured-article">
             <div id="featured-article--content">
-                <div style={{flex: 4, marginBottom: '24px'}}>
+                <div className="image-section">
                     <Image className="article-image"
                            layout="responsive"
                            width={1170} // Maximum width
