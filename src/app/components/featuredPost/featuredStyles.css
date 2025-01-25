@@ -43,3 +43,9 @@ article#featured-article .article-content {
         flex-direction: row;
     }
 }
+
+@media (max-width: 768px){
+    article#featured-article .article-content{
+        padding: 0;
+    }
+}

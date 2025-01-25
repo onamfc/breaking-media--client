@@ -113,6 +113,7 @@ h2:hover {
     margin-bottom: 1em;
 }
 
+
 @media (max-width: 768px) {
     #post-container {
         padding: 1rem;
@@ -132,6 +133,11 @@ h2:hover {
 
     article.post {
         max-width: 100%; /* Full width for mobile */
+        border: none;
+    }
+
+    article.post h2 {
+        margin-top: 4px;
     }
 
     .section-category-title {
@@ -139,11 +145,22 @@ h2:hover {
         text-align: center;
     }
 
+    .article-content {
+        padding: 0;
+        margin-top: 8px;
+    }
     .article-content h2 {
-        font-size: 1rem;
+        font-size: 2rem;
+        margin-top: 0;
     }
 
     .article-content p {
         font-size: 0.9rem;
+    }
+
+    .article-content .author{
+        margin-top: 12px;
+        display: block;
+        letter-spacing: .04em;
     }
 }
