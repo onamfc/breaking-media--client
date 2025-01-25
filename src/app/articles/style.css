@@ -133,7 +133,6 @@ h2:hover {
 
     article.post {
         max-width: 100%; /* Full width for mobile */
-        border: none;
     }
 
     article.post h2 {
@@ -146,7 +145,7 @@ h2:hover {
     }
 
     .article-content {
-        padding: 0;
+        /*padding: 0;*/
         margin-top: 8px;
     }
     .article-content h2 {
