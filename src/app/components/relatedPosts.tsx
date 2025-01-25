@@ -15,7 +15,7 @@ interface Post {
 const RelatedPosts: React.FC<{ relatedPosts: Post[] }> = ({ relatedPosts }) => {
     return (
 
-            <div className="p-4 pt-0">
+            <div className="md:p-4 pt-0">
                 <div className="section-divider">
                     <div className="section-divider-line" />
                     <span className="section-category-title">Related Posts</span>

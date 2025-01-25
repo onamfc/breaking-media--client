@@ -157,7 +157,7 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
 
                 <div className="flex flex-col lg:flex-row gap-8 mt-4 mb-8">
                     <div className="lg:w-3/4">
-                        <h1 className={`${oswald.className} text-3xl font-bold text-gray-800`}>{post.title}</h1>
+                        <h1 className={`${oswald.className} text-gray-800`}>{post.title}</h1>
                         <p className="mt-2 text-gray-600">{post.excerpt}</p>
                         <div className="prose prose-lg tracking-normal text-[18px]">
                             <div id="post-content" dangerouslySetInnerHTML={{__html: post.content}}/>
