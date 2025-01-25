@@ -6,15 +6,16 @@ import Logo from "@/app/components/logo";
 
 
 const HeaderContainer = styled.header`
-    background-color: #fff;
+    background-color: var(--background); /* Dynamically adjusts for dark mode */
+    color: var(--foreground); /* Dynamically adjusts for dark mode */
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--foreground); /* Adapts to dark mode */
     max-width: 1200px;
     margin: 0 auto;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 `;
-
 
 const Nav = styled.nav`
     margin-left: 2rem;
@@ -22,7 +23,7 @@ const Nav = styled.nav`
     text-transform: uppercase;
 
     a {
-        color: #fff;
+        color: var(--foreground); /* Dynamically adjusts for dark mode */
         text-decoration: none;
         margin: 0 1rem;
         font-size: 0.8em;

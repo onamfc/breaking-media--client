@@ -1,5 +1,5 @@
 'use client';
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import {useRouter} from "next/navigation";
 
@@ -8,14 +8,49 @@ const LogoContainer = styled.div`
 `;
 
 interface Props {
-    version: string;
+    version?: 'dark' | 'light';
     width: number;
 }
 
-const  Logo = (props: Props) => {
+const Logo = (props: Props) => {
     const router = useRouter();
-    const fillColor = props.version === 'dark' ? '#000' : '#fff';
-    const highlightColor = "#CD2C02";
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    useEffect(() => {
+        const htmlElement = document.documentElement;
+
+        // Check localStorage for a user-set preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Set the initial theme
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            htmlElement.classList.add('dark');
+            setIsDarkMode(true);
+        } else {
+            htmlElement.classList.add('light');
+            setIsDarkMode(false);
+        }
+    }, []);
+
+    const toggleDarkMode = () => {
+        const htmlElement = document.documentElement;
+        const newMode = !isDarkMode;
+
+        if (newMode) {
+            htmlElement.classList.remove('light');
+            htmlElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            htmlElement.classList.remove('dark');
+            htmlElement.classList.add('light');
+            localStorage.setItem('theme', 'light');
+        }
+        setIsDarkMode(newMode);
+    };
+
+    const fillColor = 'var(--foreground)'; // Automatically adapts to the current theme
+    const highlightColor = '#CD2C02';
 
     return (
         <LogoContainer onClick={() => router.push(`/articles`)}>
@@ -56,7 +91,8 @@ const  Logo = (props: Props) => {
                       d="M260.31,67.45h-21.63l10.76-20.05-6.6-12.17c-.66.82-1.32,1.83-1.98,3.09l-26.54,48.63c-.57,1.13-.32,1.86.97,1.86h10.6c1.05,0,1.46-.24,1.86-.97l5.26-9.87h32.99l-5.7-10.52Z"/>
             </svg>
         </LogoContainer>
-    )
-}
+    );
+};
+
 
 export default Logo;

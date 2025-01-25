@@ -28,7 +28,7 @@ img.article-image {
 
 .article-content p {
     font-size: 1rem;
-    color: #555;
+    color: var(--color-excerpt);
     font-weight: 400;
     letter-spacing: 0.005em;
 }
@@ -51,7 +51,7 @@ main.post-section {
 
 .post-category {
     font-size: 12px;
-    color: #1a1a1a;
+    color: var(--color-category);
     text-transform: uppercase;
     letter-spacing: 0.075em;
     font-family: "Poppins", serif;
@@ -74,7 +74,7 @@ main.post-section {
 
 .author {
     font-size: 12px;
-    color: #4f4f4f;
+    color: var(--color-category);
     text-transform: uppercase;
     font-weight: 600;
     font-family: "Poppins", serif;
@@ -89,7 +89,7 @@ main.post-section {
 }
 
 article.post {
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-border);
     overflow: hidden;
     display: flex;
     flex-direction: column;
