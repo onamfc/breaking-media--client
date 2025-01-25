@@ -20,7 +20,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h2, h1 {
+:root {
   user-select: none;
   -webkit-user-select: none; /* For Safari */
   touch-action: manipulation;
