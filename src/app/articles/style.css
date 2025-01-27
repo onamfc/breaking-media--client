@@ -54,7 +54,6 @@ main.post-section {
     color: var(--color-category);
     text-transform: uppercase;
     letter-spacing: 0.075em;
-    font-family: "Poppins", serif;
 }
 
 .section-divider {
@@ -86,6 +85,8 @@ main.post-section {
     font-size: 14px;
     padding: 6px 8px;
     letter-spacing: 0.03rem;
+    font-family: 'BreakingMediaAiFont', Arial, sans-serif;
+    text-transform: uppercase;
 }
 
 article.post {
