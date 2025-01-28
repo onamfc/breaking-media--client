@@ -5,7 +5,7 @@ import {Post} from "@/app/interface/post";
 import {useHandlePostClick} from "@/app/helpers";
 import "./featuredStyles.css";
 
-const FeaturedPost = ({featuredPost}: {featuredPost: Post}) => {
+const FeaturedPost = ({featuredPost}: { featuredPost: Post }) => {
     const handlePostClick = useHandlePostClick();
     return (
         <article id="featured-article">
@@ -17,7 +17,7 @@ const FeaturedPost = ({featuredPost}: {featuredPost: Post}) => {
                            height={571} // Maximum height
                            objectFit="cover"
                            onClick={() => handlePostClick(featuredPost.slug)}
-                           src={'https://api.breakingmedia.ai/storage/' + featuredPost.image || 'https://via.placeholder.com/900x600'}
+                           src={`https://api.breakingmedia.ai/storage/${featuredPost.image}`}
                            alt={featuredPost.title}/>
                 </div>
                 <div style={{flex: 3}}>

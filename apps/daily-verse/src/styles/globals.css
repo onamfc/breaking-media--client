@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-primary: #1a1a1a; /* Category default */
+  --color-secondary: #555; /* Excerpt default */
+  --color-category: #1a1a1a; /* Category text color */
+  --color-excerpt: #555; /* Excerpt text color */
+  --color-border: #ddd; /* Border color */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --color-primary: #ededed; /* Adjusted for dark mode */
+    --color-secondary: #999; /* Adjusted for dark mode */
+    --color-category: #aaaaaa; /* Category text color for dark mode */
+    --color-excerpt: #aaaaaa; /* Excerpt text color for dark mode */
+    --color-border: #444; /* Border color for dark mode */
+  }
+
+
+}
+/* Class-based dark mode overrides media query */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --color-primary: #ededed; /* Adjusted for dark mode */
+  --color-secondary: #999; /* Adjusted for dark mode */
+  --color-category: #aaaaaa; /* Category text color for dark mode */
+  --color-excerpt: #aaaaaa; /* Excerpt text color for dark mode */
+  --color-border: #444; /* Border color for dark mode */
+}
+
+.light {
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-primary: #1a1a1a; /* Category default */
+  --color-secondary: #555; /* Excerpt default */
+  --color-category: #1a1a1a; /* Category text color */
+  --color-excerpt: #555; /* Excerpt text color */
+  --color-border: #ddd; /* Border color */
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  user-select: none;
+  -webkit-user-select: none; /* For Safari */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}

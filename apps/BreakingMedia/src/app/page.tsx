@@ -1,18 +1,23 @@
 import React from "react";
-import Logo from "@/app/components/logo";
+import {Logo} from "@breakingmedia/components";
 import Link from "next/link";
+import BreakingMediaLogo from "@/app/components/breakingMediaLogo";
 
 export default function Home() {
+    const breakingMediaSVG = BreakingMediaLogo();
     return (
         <div
             className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 gap-16 sm:p-4 sm:px-20 font-[family-name:var(--font-geist-sans)]">
             <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
                 <div>
-                    <Logo version={'dark'} width={340}/>
+                    <Logo width={260} svg={breakingMediaSVG} logoRoute={'/articles'}/>
                 </div>
                 <ul className="list-inside text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
                     <li className="mb-2 md:pr-72">
-                        At breakingmedia.ai, we merge cutting-edge artificial intelligence with compelling storytelling to redefine how the world consumes content. Our AI-driven platform doesn’t just report stories—it evolves with them, delivering personalized, impactful narratives that inform, inspire, and ignite action.
+                        At breakingmedia.ai, we merge cutting-edge artificial intelligence with compelling storytelling
+                        to redefine how the world consumes content. Our AI-driven platform doesn’t just report
+                        stories—it evolves with them, delivering personalized, impactful narratives that inform,
+                        inspire, and ignite action.
                         Ready to experience the future of media?
                     </li>
                 </ul>
