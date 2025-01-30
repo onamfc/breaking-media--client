@@ -2,19 +2,13 @@
 import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import {useRouter} from "next/navigation";
+import LogoProps from '../../interface/LogoProps';
 
 const LogoContainer = styled.div`
     cursor: pointer;
 `;
 
-interface LogoProps {
-    version?: 'dark' | 'light';
-    width: number;
-    svg: string; // Accepts SVG as a string
-    logoRoute: string;
-}
-
-const Logo: React.FC<LogoProps> = ({version, width, svg, logoRoute}) => {
+const Logo: React.FC<LogoProps> = ({version, width, svg, route}) => {
     const router = useRouter();
     const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -34,7 +28,7 @@ const Logo: React.FC<LogoProps> = ({version, width, svg, logoRoute}) => {
     }, []);
 
     return (
-        <LogoContainer onClick={() => router.push(`${logoRoute}`)} style={{
+        <LogoContainer onClick={() => router.push(`${route}`)} style={{
             width: `${width}px`,
             height: 'auto',
         }}>

@@ -17,7 +17,7 @@ export default function HeaderFooterWrapper({children}: { children: React.ReactN
         <>
             {shouldShowHeaderFooter && <Header route={route} width={width} svg={DailVerseSVG}/>}
             {children}
-            {shouldShowHeaderFooter && <Footer/>}
+            {shouldShowHeaderFooter && <Footer svg={DailVerseSVG}/>}
         </>
     );
 }

@@ -15,7 +15,7 @@ const Main = styled.footer`
 
     grid-area: 1 /1 auto /-1;
     width: 100%;
-    border-bottom: 2px solid #dc1010;
+    border-bottom: 2px solid var(--color-highlight);
 
     h1 {
         font-size: 1rem;
@@ -37,7 +37,7 @@ const Main = styled.footer`
         }
 
         a {
-            color: #0af;
+            color: var(--color-highlight);
             text-decoration: none;
 
             &:hover {
@@ -47,16 +47,15 @@ const Main = styled.footer`
     }
 `;
 
-const Footer: React.FC = () => {
+interface FooterProps {
+    svg: string;
+}
+
+const Footer: React.FC<any> = ({svg}) => {
     return (
         <Main>
             <div className="flex justify-center flex-col">
-                <Logo version={'light'} width={180} svg={''} logoRoute={'/'}/>
-                <p style={{fontSize: '.750rem', letterSpacing: '.0625em', marginTop: '12px'}}>
-                    This website showcases the capabilities of artificial intelligence by generating all
-                    editorial content on this website for entertainment purposes. Curious to learn more? <a
-                    href="#">More to come&hellip;</a>
-                </p>
+                <Logo version={'light'} width={180} svg={svg} route={'/'}/>
             </div>
         </Main>
     )

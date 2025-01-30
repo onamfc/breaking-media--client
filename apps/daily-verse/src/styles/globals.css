@@ -10,6 +10,7 @@
   --color-category: #1a1a1a; /* Category text color */
   --color-excerpt: #555; /* Excerpt text color */
   --color-border: #ddd; /* Border color */
+  --color-highlight: #d4af37;
 }
 
 @media (prefers-color-scheme: dark) {

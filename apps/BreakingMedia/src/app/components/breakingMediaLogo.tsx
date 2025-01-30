@@ -1,6 +1,6 @@
-const BreakingMediaLogo = () => {
+const BreakingMediaLogo = (): string => {
     const fillColor = 'var(--foreground)'; // Automatically adapts to the current theme
-    const highlightColor = '#CD2C02';
+    const highlightColor = 'var(--color-highlight)';
 
 
     return `

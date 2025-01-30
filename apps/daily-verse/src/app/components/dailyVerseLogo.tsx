@@ -1,6 +1,6 @@
-const DailyVerseLogo = () => {
+const DailyVerseLogo = (): string => {
     const fillColor = 'var(--foreground)'; // Automatically adapts to the current theme
-    const highlightColor = '#d4af37';
+    const highlightColor = 'var(--color-highlight)';
 
 
     return `

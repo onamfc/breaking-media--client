@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@breakingmedia/shared/components/*": ["../../packages/shared/components/src/*"]
+      "@breakingmedia/components": ["../packages/shared/components/dist/components/src"],
+      "@breakingmedia/components/*": ["../packages/shared/components/dist/components/src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

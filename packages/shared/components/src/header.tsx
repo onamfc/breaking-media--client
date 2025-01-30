@@ -3,6 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import Logo from "./logo";
+import LogoProps from '../../interface/LogoProps';
 
 
 const HeaderContainer = styled.header`
@@ -34,16 +35,12 @@ const Nav = styled.nav`
     }
 `;
 
-interface Props {
-    route: string;
-    width: number;
-    svg: string; // Use the correct type
-}
 
-const Header: React.FC<Props> = ({route, width, svg}) => {
+
+const Header: React.FC<LogoProps> = ({route, width, svg}) => {
     return (
         <HeaderContainer>
-            <Logo version="dark" width={width} svg={svg} logoRoute={route}/>
+            <Logo version="dark" width={width} svg={svg} route={route}/>
             <Nav>
                 {/* Navigation links here */}
             </Nav>
