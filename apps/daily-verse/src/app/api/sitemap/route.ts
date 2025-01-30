@@ -22,9 +22,14 @@ export async function GET() {
     `)
         .join('');
 
+    interface Post {
+        slug: string;
+        updated_at: string;
+        created_at: string;
+    }
     // Generate XML for dynamic articles
     const articlesSitemap = posts
-        .map((post: any) => `
+        .map((post: Post) => `
         <url>
             <loc>${baseUrl}/scripture/${post.slug}</loc>
             <lastmod>${new Date(post.updated_at || post.created_at).toISOString()}</lastmod>

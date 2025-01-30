@@ -13,6 +13,7 @@ async function fetchPost(slug: string) {
         const response = await axios.get(`https://api.breakingmedia.ai/post/${slug}`);
         return response.data.data;
     } catch (error) {
+        error = null;
         throw new Error('Failed to fetch post data');
     }
 }
@@ -42,6 +43,7 @@ export async function generateMetadata(props: {
             },
         };
     } catch (error) {
+        error = null;
         return {
             title: 'Scripture Post Not Found',
             description: 'We could not load the content for this scripture.',
@@ -56,6 +58,7 @@ async function fetchRelatedPosts(currentSlug: string) {
         const response = await axios.get(`https://api.breakingmedia.ai/posts/${currentSlug}/related`);
         return response.data;
     } catch (error) {
+        error = null;
         return [];
     }
 }
@@ -69,11 +72,12 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
         post = await fetchPost(slug);
         relatedPosts = await fetchRelatedPosts(slug);
     } catch (error) {
+        error = null;
         return (
             <div className="container mx-auto px-4 max-w-[1000px] pb-[80px]">
                 <h1 className="text-2xl font-bold text-red-500">Scripture Not Found</h1>
                 <p className="text-gray-600">
-                    We couldn't retrieve the requested scripture post. Please try again later.
+                    We could not retrieve the requested scripture post. Please try again later.
                 </p>
             </div>
         );

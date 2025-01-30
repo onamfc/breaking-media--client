@@ -14,14 +14,23 @@ export async function GET() {
     // Fetch your posts from the server
     const posts = await fetch(`https://api.breakingmedia.ai/posts`).then(res => res.json());
 
+    interface Post {
+        title: string;
+        excerpt: string;
+        slug: string;
+        category: {
+            name: string;
+        };
+        created_at: string;
+    }
     // Add items to the feed
-    posts.forEach((post: any) => {
+    posts.forEach((post: Post) => {
         feed.item({
             title: post.title,
             description: post.excerpt,
             url: `https://dailyverse.ai/scripture/${post.slug}`,
             date: post.created_at,
-            categories: [post.category?.name]
+            categories: [post.category.name]
         });
     });
 
