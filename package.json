@@ -1,23 +1,16 @@
 {
-  "name": "breaking-ai--client",
-  "version": "0.1.0",
+  "name": "breaking-ai-monorepo",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "packages/shared/*"
+  ],
+  "packageManager": "npm@10.8.2",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@vercel/speed-insights": "^1.1.0",
-    "axios": "^1.7.9",
-    "babel-plugin-styled-components": "^2.1.4",
-    "markdown-it": "^14.1.0",
-    "next": "15.1.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "rss": "^1.2.2",
-    "styled-components": "^6.1.13"
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint"
   },
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",
@@ -27,6 +20,14 @@
     "@types/rss": "^0.0.32",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "turbo": "^2.3.4"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "babel-plugin-styled-components": "^2.1.4",
+    "markdown-it": "^14.1.0",
+    "rss": "^1.2.2",
+    "styled-components": "^6.1.13"
   }
 }

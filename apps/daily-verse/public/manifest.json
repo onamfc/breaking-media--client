@@ -1,0 +1,45 @@
+{
+  "theme_color": "#d4af35",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "sizes": "192x192",
+      "src": "dailyverse-192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "icon512_rounded.png",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "any",
+  "display": "standalone",
+  "dir": "auto",
+  "lang": "en-US",
+  "name": "Daily Verse",
+  "short_name": "dailyverse",
+  "start_url": "/",
+  "scope": "/",
+  "id": "https://dailyverse.ai",
+  "shortcuts": [
+    {
+      "name": "Scriptures",
+      "short_name": "Scriptures",
+      "description": "View all passages",
+      "url": "/scriptures"
+    }
+  ]
+}
