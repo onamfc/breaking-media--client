@@ -10,7 +10,12 @@ import RelatedPosts from '@/app/components/relatedPosts';
 // Fetch the single post data based on the slug
 async function fetchPost(slug: string) {
     try {
-        const response = await axios.get(`https://api.breakingmedia.ai/post/${slug}`);
+        const response = await axios.get(`https://api.breakingmedia.ai/post/${slug}`,
+            {
+                headers: {
+                    'X-Origin-Domain': 'https://dailyverse.ai',
+                },
+            });
         return response.data.data;
     } catch (error) {
         error = null;
@@ -57,7 +62,12 @@ export async function generateMetadata(props: {
 // Fetch related posts based on the post ID
 async function fetchRelatedPosts(currentSlug: string) {
     try {
-        const response = await axios.get(`https://api.breakingmedia.ai/posts/${currentSlug}/related`);
+        const response = await axios.get(`https://api.breakingmedia.ai/posts/${currentSlug}/related`,
+            {
+                headers: {
+                    'X-Origin-Domain': 'https://dailyverse.ai',
+                },
+            });
         return response.data;
     } catch (error) {
         error = null;

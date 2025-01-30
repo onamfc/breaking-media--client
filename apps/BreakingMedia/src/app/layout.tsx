@@ -36,6 +36,9 @@ export default function RootLayout({
             />
             <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/api/rss" />
             <link rel="sitemap" type="application/xml" title="Sitemap" href="/api/sitemap" />
+            <link rel="manifest" href="/manifest.json"/>
+            <meta name="theme-color" content="#2196f3"/>
+            <link rel="icon" href="/breakingmedia-192.png"/>
         </head>
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
