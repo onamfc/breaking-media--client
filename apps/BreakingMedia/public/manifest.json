@@ -1,0 +1,45 @@
+{
+  "theme_color": "#8936FF",
+  "background_color": "#2EC6FE",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "sizes": "192x192",
+      "src": "breakingmedia-192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "icon512_rounded.png",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "any",
+  "display": "standalone",
+  "dir": "auto",
+  "lang": "en-US",
+  "name": "Breaking Media AI",
+  "short_name": "breaking media ai",
+  "start_url": "/",
+  "scope": "/",
+  "id": "https://breakingmedia.ai",
+  "shortcuts": [
+    {
+      "name": "Articles",
+      "short_name": "Articles",
+      "description": "View all articles",
+      "url": "/articles"
+    }
+  ]
+}

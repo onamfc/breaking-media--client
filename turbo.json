@@ -1,0 +1,15 @@
+{
+  "extends": ["turbo/presets"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "dev": {
+      "cache": false,
+      "dependsOn": ["^build"]
+    },
+    "lint": {},
+    "test": {}
+  }
+}
