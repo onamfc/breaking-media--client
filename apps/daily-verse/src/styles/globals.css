@@ -58,3 +58,11 @@ body {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
+
+blockquote{
+  border-left: 2px solid rgb(212, 175, 55);
+  padding: 20px;
+  background: #eee;
+  margin-bottom: 12px;
+  color: grey;
+}
