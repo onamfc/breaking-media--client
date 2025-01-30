@@ -14,6 +14,7 @@ async function fetchPost(slug: string) {
         return response.data.data;
     } catch (error) {
         error = null;
+        console.log(error)
         throw new Error('Failed to fetch post data');
     }
 }
@@ -44,6 +45,7 @@ export async function generateMetadata(props: {
         };
     } catch (error) {
         error = null;
+        console.log(error)
         return {
             title: 'Scripture Post Not Found',
             description: 'We could not load the content for this scripture.',
@@ -59,6 +61,7 @@ async function fetchRelatedPosts(currentSlug: string) {
         return response.data;
     } catch (error) {
         error = null;
+        console.log(error)
         return [];
     }
 }
@@ -73,6 +76,7 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
         relatedPosts = await fetchRelatedPosts(slug);
     } catch (error) {
         error = null;
+        console.log(error)
         return (
             <div className="container mx-auto px-4 max-w-[1000px] pb-[80px]">
                 <h1 className="text-2xl font-bold text-red-500">Scripture Not Found</h1>
