@@ -10,7 +10,12 @@ import {oswald} from "@/app/font/oswald";
 // Fetch the single post data based on the slug
 async function fetchPost(slug: string) {
     try {
-        const response = await axios.get(`https://api.breakingmedia.ai/post/${slug}`);
+        const response = await axios.get(`https://api.breakingmedia.ai/post/${slug}`,
+            {
+                headers: {
+                    'X-Origin-Domain': 'https://breakingmedia.ai',
+                },
+            });
         return response.data.data;
     } catch (error) {
         throw new Error('Failed to fetch post data');
@@ -61,7 +66,12 @@ function getInitials(name: string): string {
 // Fetch related posts based on the post ID
 async function fetchRelatedPosts(currentSlug: string) {
     try {
-        const response = await axios.get(`https://api.breakingmedia.ai/posts/${currentSlug}/related`);
+        const response = await axios.get(`https://api.breakingmedia.ai/posts/${currentSlug}/related`,
+            {
+                headers: {
+                    'X-Origin-Domain': 'https://breakingmedia.ai',
+                },
+            });
         return response.data;
     } catch (error) {
         return [];
