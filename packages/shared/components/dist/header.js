@@ -35,7 +35,6 @@ const Nav = styled_components_1.default.nav `
     }
 `;
 const Header = ({ route, width, svg }) => {
-    console.log('svg', svg);
     return (react_1.default.createElement(HeaderContainer, null,
         react_1.default.createElement(logo_1.default, { version: "dark", width: width, svg: svg, logoRoute: route }),
         react_1.default.createElement(Nav, null)));

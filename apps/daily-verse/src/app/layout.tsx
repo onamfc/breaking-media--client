@@ -28,14 +28,17 @@ export default function RootLayout({
     return (
         <html lang="en">
         <head>
-            <title>Breaking Media</title>
+            <title>Daily Verse</title>
             <Script
-                src="https://xant.us/widget/xantus-production.js?safd"
+                src="https://xant.us/widget/xantus-production.js?s=dailyverse"
                 type="application/javascript"
                 strategy="afterInteractive"
             />
             <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/api/rss"/>
             <link rel="sitemap" type="application/xml" title="Sitemap" href="/api/sitemap"/>
+            <link rel="manifest" href="/manifest.json"/>
+            <meta name="theme-color" content="#2196f3"/>
+            <link rel="icon" href="/dailyverse-192.png"/>
         </head>
         <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}

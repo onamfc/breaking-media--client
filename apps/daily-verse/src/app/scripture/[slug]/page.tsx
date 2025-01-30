@@ -4,7 +4,8 @@ import {Metadata} from 'next';
 import '../style.css';
 import Image from "next/image";
 import {oswald} from "@/app/font/oswald";
-
+import ReactMarkdown from 'react-markdown';
+import RelatedPosts from '@/app/components/relatedPosts';
 
 // Fetch the single post data based on the slug
 async function fetchPost(slug: string) {
@@ -36,26 +37,18 @@ export async function generateMetadata(props: {
                 images: post.image
                     ? `https://api.breakingmedia.ai/storage/${post.image}`
                     : 'https://via.placeholder.com/1920x1080',
-                url: `https://api.breakingmedia.ai/articles/${slug}`,
+                url: `https://dailyverse.ai/scripture/${slug}`,
                 type: 'article',
             },
         };
     } catch (error) {
         return {
-            title: 'Article Post Not Found',
-            description: 'We could not load the content for this article post.',
+            title: 'Scripture Post Not Found',
+            description: 'We could not load the content for this scripture.',
         };
     }
 }
 
-function getInitials(name: string): string {
-    // Split the name by spaces, filtering out empty strings
-    const nameParts = name.split(' ').filter(part => part.length > 0);
-
-    // Map each part to its first letter and join them
-    return nameParts.map(part => part[0].toUpperCase()).join('');
-
-}
 
 // Fetch related posts based on the post ID
 async function fetchRelatedPosts(currentSlug: string) {
@@ -78,9 +71,9 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
     } catch (error) {
         return (
             <div className="container mx-auto px-4 max-w-[1000px] pb-[80px]">
-                <h1 className="text-2xl font-bold text-red-500">Post Not Found</h1>
+                <h1 className="text-2xl font-bold text-red-500">Scripture Not Found</h1>
                 <p className="text-gray-600">
-                    We couldn't retrieve the requested article post. Please try again later.
+                    We couldn't retrieve the requested scripture post. Please try again later.
                 </p>
             </div>
         );
@@ -92,27 +85,22 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
         headline: post.title,
         image: post.image
             ? `https://api.breakingmedia.ai/storage/${post.image}`
-            : 'https://breakingmedia.ai/breakingMediaLogo.png',
-        author: {
-            "@type": "Person",
-            name: post.author?.name,
-            description: post.author?.bio,
-        },
+            : 'https://dailyverse.ai/dailyVerse.png',
         datePublished: post.created_at,
         dateModified: post.updated_at || post.created_at,
         publisher: {
             "@type": "Organization",
-            "name": "breakingmedia.ai",
+            "name": "dailyverse.ai",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://breakingmedia.ai/breakingMediaLogo.png"
+                "url": "https://dailyverse.ai/dailyVerse.png"
             }
         },
         articleSection: post.category?.name,
         description: post.excerpt,
         mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": `https://breakingmedia.ai/articles/${post.slug}`,
+            "@id": `https://dailyverse.ai/scripture/${post.slug}`,
         },
     };
 
@@ -146,8 +134,6 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
 
                 <div className="flex justify-between items-center my-4 text-sm text-gray-500">
                     <div>
-                        <span className="font-semibold">{post.author?.name}</span>
-                        <span> | </span>
                         <span>{post.category?.name}</span>
                         <span> | </span>
                         <span>{new Date(post.created_at).toLocaleDateString()}</span>
@@ -159,42 +145,15 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
                         <h1 className={`${oswald.className} text-gray-800`}>{post.title}</h1>
                         <p className="mt-2 text-gray-600">{post.excerpt}</p>
                         <div className="prose prose-lg tracking-normal text-[18px]">
-                            <div id="post-content" dangerouslySetInnerHTML={{__html: post.content}}/>
+                            <ReactMarkdown>{post.content}</ReactMarkdown>
                         </div>
                     </div>
                     {/* Sidebar */}
                     <div className="lg:w-1/4">
-
+                        <RelatedPosts relatedPosts={relatedPosts}/>
                     </div>
                 </div>
 
-                <div className="flex items-start gap-4 border-t border-gray-200 pt-8">
-                    {/* Author Photo */}
-                    <div className="w-[120px]">
-                        <div
-                            className="flex items-center text-2xl w-20 h-20 rounded-full object-cover bg-gray-700 text-white justify-center align-middle"
-                        >
-
-                            {
-                                post.author?.photo ? (
-                                    <Image
-                                        src={`https://api.breakingmedia.ai/storage/${post.author?.photo}`}
-                                        alt={post.author?.name}
-                                        width={80}
-                                        height={80}
-                                        className="rounded-full"
-                                    />
-                                ) : getInitials(post.author?.name)
-                            }
-                        </div>
-                    </div>
-
-                    {/* Author Info */}
-                    <div>
-                        <h3 className="text-lg font-bold text-gray-800">{post.author?.name}</h3>
-                        <p className="text-sm text-gray-600">{post.author?.bio}</p>
-                    </div>
-                </div>
             </div>
         </>
     );

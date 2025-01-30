@@ -30,7 +30,7 @@ export default function RootLayout({
         <head>
             <title>Breaking Media</title>
             <Script
-                src="https://xant.us/widget/xantus-production.js?safd"
+                src="https://xant.us/widget/xantus-production.js?s=breakingmedia"
                 type="application/javascript"
                 strategy="afterInteractive"
             />

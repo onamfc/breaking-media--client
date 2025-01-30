@@ -41,7 +41,6 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({route, width, svg}) => {
-    console.log('svg', svg);
     return (
         <HeaderContainer>
             <Logo version="dark" width={width} svg={svg} logoRoute={route}/>

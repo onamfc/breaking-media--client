@@ -18,7 +18,7 @@ interface Post {
 
 async function fetchPosts(): Promise<Post[]> {
     try {
-        const res = await fetch(`https://api.breakingmedia.ai/posts`, {
+        const res = await fetch(`http://192.168.0.17:8000/posts`, {
             cache: 'no-store', // Prevent caching for real-time data
         });
         if (!res.ok) {

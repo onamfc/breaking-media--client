@@ -52,7 +52,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$BreakingMedia$2f$src
 ;
 async function fetchPosts() {
     try {
-        const res = await fetch(`https://api.breakingmedia.ai/posts`, {
+        const res = await fetch(`http://192.168.0.17:8000/posts`, {
             cache: 'no-store'
         });
         if (!res.ok) {
