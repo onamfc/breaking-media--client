@@ -26,6 +26,8 @@ async function fetchPosts(): Promise<Post[]> {
         }
         return await res.json();
     } catch (error) {
+        error = null;
+        console.log(error)
         return [];
     }
 }
