@@ -3,7 +3,8 @@ import {Geist, Geist_Mono} from "next/font/google";
 import "../styles/globals.css";
 import Script from 'next/script';
 import HeaderFooterWrapper from "@/app/components/HeaderFooterWrapper";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import {SpeedInsights} from "@vercel/speed-insights/next"
+import {Analytics} from "@vercel/analytics/react"
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -34,8 +35,8 @@ export default function RootLayout({
                 type="application/javascript"
                 strategy="afterInteractive"
             />
-            <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/api/rss" />
-            <link rel="sitemap" type="application/xml" title="Sitemap" href="/api/sitemap" />
+            <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/api/rss"/>
+            <link rel="sitemap" type="application/xml" title="Sitemap" href="/api/sitemap"/>
             <link rel="manifest" href="/manifest.json"/>
             <meta name="theme-color" content="#2196f3"/>
             <link rel="icon" href="/breakingmedia-192.png"/>
@@ -44,6 +45,7 @@ export default function RootLayout({
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
         <SpeedInsights/>
+        <Analytics/>
         <HeaderFooterWrapper>{children}</HeaderFooterWrapper>
         </body>
         </html>
