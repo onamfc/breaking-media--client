@@ -37,6 +37,9 @@ export default function RootLayout({
             />
             <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/api/rss"/>
             <link rel="sitemap" type="application/xml" title="Sitemap" href="/api/sitemap"/>
+            <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7095749297864618"
+                    crossOrigin="anonymous"></script>
             <link rel="manifest" href="/manifest.json"/>
             <meta name="theme-color" content="#2196f3"/>
             <link rel="icon" href="/breakingmedia-192.png"/>

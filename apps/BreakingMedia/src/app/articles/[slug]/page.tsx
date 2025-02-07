@@ -5,6 +5,7 @@ import '../style.css';
 import RelatedPosts from "@/app/components/relatedPosts";
 import Image from "next/image";
 import {oswald} from "@/app/font/oswald";
+import {Advertisement} from '@breakingmedia/components';
 
 
 // Fetch the single post data based on the slug
@@ -175,7 +176,10 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
                     </div>
                     {/* Sidebar */}
                     <div className="lg:w-1/4">
-                        <RelatedPosts relatedPosts={relatedPosts} />
+                        <div className="md:p-4 pt-0">
+                            <Advertisement adType={'square'} adId={[1, 2, 3][Math.floor(Math.random() * 3)]}/>
+                            <RelatedPosts relatedPosts={relatedPosts}/>
+                        </div>
                     </div>
                 </div>
 
