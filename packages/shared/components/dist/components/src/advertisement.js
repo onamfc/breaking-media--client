@@ -54,9 +54,9 @@ const Advertisement = ({ adType, adId }) => {
     (0, react_1.useEffect)(() => {
         const fetchAd = () => __awaiter(void 0, void 0, void 0, function* () {
             try {
-                const response = yield axios_1.default.get(`http://192.168.0.17:8000/api/ads/${adId}`, {
+                const response = yield axios_1.default.get(`https://api.breakingmedia.ai/ads/${adId}`, {
                     headers: {
-                        'X-Origin-Domain': 'http://localhost:3000',
+                        'X-Origin-Domain': 'https://breakingmedia.ai',
                     },
                 });
                 if (response.data) {
@@ -75,11 +75,10 @@ const Advertisement = ({ adType, adId }) => {
     }, [adId]);
     const trackAdClick = () => __awaiter(void 0, void 0, void 0, function* () {
         try {
-            yield axios_1.default.post(`http://192.168.0.17:8000/api/ads/click`, {
+            yield axios_1.default.post(`https://breakingmedia.ai/ads/click`, {
                 ad_id: adId,
                 ad_slot: (ad === null || ad === void 0 ? void 0 : ad.slot) || 'default',
             });
-            console.log('Ad click tracked successfully.');
         }
         catch (error) {
             console.error('Error tracking ad click:', error);
@@ -97,7 +96,7 @@ const Advertisement = ({ adType, adId }) => {
     }
     const imageUrl = ad.image_url.startsWith('http')
         ? ad.image_url
-        : `${process.env.NEXT_PUBLIC_API_URL}/storage/${ad.image_url}`;
+        : `https://breakingmedia.ai/storage/${ad.image_url}`;
     return (react_1.default.createElement("div", { style: {
             overflow: 'hidden',
             position: 'relative',
