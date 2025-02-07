@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
 interface AdvertisementProps {
@@ -8,16 +8,16 @@ interface AdvertisementProps {
     adId: number;
 }
 
-const Advertisement: React.FC<AdvertisementProps> = ({ adType, adId }) => {
+const Advertisement: React.FC<AdvertisementProps> = ({adType, adId}) => {
     const [ad, setAd] = useState<any | null>(null);
     const [imageError, setImageError] = useState(false);
 
     useEffect(() => {
         const fetchAd = async () => {
             try {
-                const response = await axios.get(`http://192.168.0.17:8000/api/ads/${adId}`, {
+                const response = await axios.get(`https://api.breakingmedia.ai/ads/${adId}`, {
                     headers: {
-                        'X-Origin-Domain': 'http://localhost:3000',
+                        'X-Origin-Domain': 'https://breakingmedia.ai',
                     },
                 });
 
@@ -37,11 +37,10 @@ const Advertisement: React.FC<AdvertisementProps> = ({ adType, adId }) => {
 
     const trackAdClick = async () => {
         try {
-            await axios.post(`http://192.168.0.17:8000/api/ads/click`, {
+            await axios.post(`https://breakingmedia.ai/ads/click`, {
                 ad_id: adId,
                 ad_slot: ad?.slot || 'default',
             });
-            console.log('Ad click tracked successfully.');
         } catch (error) {
             console.error('Error tracking ad click:', error);
         }
@@ -56,8 +55,8 @@ const Advertisement: React.FC<AdvertisementProps> = ({ adType, adId }) => {
 
     if (!ad) {
         return (
-            <div style={{ backgroundColor: '#f0f0f0' }}>
-                <p style={{ textAlign: 'center', padding: '10px', color: '#888' }}>
+            <div style={{backgroundColor: '#f0f0f0'}}>
+                <p style={{textAlign: 'center', padding: '10px', color: '#888'}}>
                     Loading ad...
                 </p>
             </div>
@@ -66,7 +65,7 @@ const Advertisement: React.FC<AdvertisementProps> = ({ adType, adId }) => {
 
     const imageUrl = ad.image_url.startsWith('http')
         ? ad.image_url
-        : `${process.env.NEXT_PUBLIC_API_URL}/storage/${ad.image_url}`;
+        : `https://breakingmedia.ai/storage/${ad.image_url}`;
 
     return (
         <div
@@ -93,8 +92,8 @@ const Advertisement: React.FC<AdvertisementProps> = ({ adType, adId }) => {
                 }}
             />
             {imageError && (
-                <div style={{ width: '100%', height: '100%', backgroundColor: '#f0f0f0' }}>
-                    <p style={{ textAlign: 'center', padding: '10px', color: '#888' }}>
+                <div style={{width: '100%', height: '100%', backgroundColor: '#f0f0f0'}}>
+                    <p style={{textAlign: 'center', padding: '10px', color: '#888'}}>
                         Failed to load ad image.
                     </p>
                 </div>
