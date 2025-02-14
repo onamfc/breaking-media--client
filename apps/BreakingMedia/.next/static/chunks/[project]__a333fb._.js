@@ -230,7 +230,6 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, e: exports, t: __turbopack_require_real__ } = __turbopack_context__;
 {
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 'use client';
 "use strict";
 var __createBinding = this && this.__createBinding || (Object.create ? function(o, m, k, k2) {
@@ -319,9 +318,9 @@ const Advertisement = ({ adType, adId })=>{
     (0, react_1.useEffect)(()=>{
         const fetchAd = ()=>__awaiter(void 0, void 0, void 0, function*() {
                 try {
-                    const response = yield axios_1.default.get(`http://192.168.0.17:8000/api/ads/${adId}`, {
+                    const response = yield axios_1.default.get(`https://api.breakingmedia.ai/ads/${adId}`, {
                         headers: {
-                            'X-Origin-Domain': 'http://localhost:3000'
+                            'X-Origin-Domain': 'https://breakingmedia.ai'
                         }
                     });
                     if (response.data) {
@@ -340,11 +339,10 @@ const Advertisement = ({ adType, adId })=>{
     ]);
     const trackAdClick = ()=>__awaiter(void 0, void 0, void 0, function*() {
             try {
-                yield axios_1.default.post(`http://192.168.0.17:8000/api/ads/click`, {
+                yield axios_1.default.post(`https://breakingmedia.ai/ads/click`, {
                     ad_id: adId,
                     ad_slot: (ad === null || ad === void 0 ? void 0 : ad.slot) || 'default'
                 });
-                console.log('Ad click tracked successfully.');
             } catch (error) {
                 console.error('Error tracking ad click:', error);
             }
@@ -368,7 +366,7 @@ const Advertisement = ({ adType, adId })=>{
             }
         }, "Loading ad..."));
     }
-    const imageUrl = ad.image_url.startsWith('http') ? ad.image_url : `${__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_API_URL}/storage/${ad.image_url}`;
+    const imageUrl = ad.image_url.startsWith('http') ? ad.image_url : `https://breakingmedia.ai/storage/${ad.image_url}`;
     return react_1.default.createElement("div", {
         style: {
             overflow: 'hidden',
@@ -463,14 +461,14 @@ var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_
 __turbopack_esm__({
     "default": (()=>__TURBOPACK__default__export__)
 });
-const BreakingMediaLogo = ()=>{
+const BreakingMediaLogo = (width)=>{
     const fillColor = 'var(--foreground)'; // Automatically adapts to the current theme
     const highlightColor = 'var(--color-highlight)';
     return `
       <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlSpace="preserve"
-                width={260}
+                width="${width}"
                 height="auto"
                 version="1.1"
                 style={{
@@ -537,8 +535,9 @@ function HeaderFooterWrapper({ children }) {
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
     const shouldShowHeaderFooter = pathname !== "/";
     const route = "/articles";
-    const width = 260;
-    const breakingMediaSVG = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$BreakingMedia$2f$src$2f$app$2f$components$2f$breakingMediaLogo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(); // Call the BreakingMediaLogo function to get the SVG string
+    const width = 300;
+    const screenWidth = window.innerWidth;
+    const breakingMediaSVG = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$BreakingMedia$2f$src$2f$app$2f$components$2f$breakingMediaLogo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(width > screenWidth * .50 ? screenWidth * .50 : width); // Call the BreakingMediaLogo function to get the SVG string
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             shouldShowHeaderFooter && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2f$components$2f$dist$2f$components$2f$src$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Header"], {
@@ -547,7 +546,7 @@ function HeaderFooterWrapper({ children }) {
                 svg: breakingMediaSVG
             }, void 0, false, {
                 fileName: "[project]/apps/BreakingMedia/src/app/components/HeaderFooterWrapper.tsx",
-                lineNumber: 18,
+                lineNumber: 19,
                 columnNumber: 40
             }, this),
             children,
@@ -555,7 +554,7 @@ function HeaderFooterWrapper({ children }) {
                 svg: breakingMediaSVG
             }, void 0, false, {
                 fileName: "[project]/apps/BreakingMedia/src/app/components/HeaderFooterWrapper.tsx",
-                lineNumber: 20,
+                lineNumber: 21,
                 columnNumber: 40
             }, this)
         ]

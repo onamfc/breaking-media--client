@@ -6513,16 +6513,47 @@ function supportsColor(haveStream, streamIsTTY) {
     if (env.TERM === 'dumb') {
         return min;
     }
-    if ("TURBOPACK compile-time truthy", 1) {
-        // Windows 10 build 10586 is the first Windows release that supports 256 colors.
-        // Windows 10 build 14931 is the first release that supports 16m/TrueColor.
-        const osRelease = os.release().split('.');
-        if (Number(osRelease[0]) >= 10 && Number(osRelease[2]) >= 10586) {
-            return Number(osRelease[2]) >= 14931 ? 3 : 2;
+    if ("TURBOPACK compile-time falsy", 0) {
+        "TURBOPACK unreachable";
+    }
+    if ('CI' in env) {
+        if ([
+            'TRAVIS',
+            'CIRCLECI',
+            'APPVEYOR',
+            'GITLAB_CI',
+            'GITHUB_ACTIONS',
+            'BUILDKITE'
+        ].some((sign)=>sign in env) || env.CI_NAME === 'codeship') {
+            return 1;
         }
+        return min;
+    }
+    if ('TEAMCITY_VERSION' in env) {
+        return /^(9\.(0*[1-9]\d*)\.|\d{2,}\.)/.test(env.TEAMCITY_VERSION) ? 1 : 0;
+    }
+    if (env.COLORTERM === 'truecolor') {
+        return 3;
+    }
+    if ('TERM_PROGRAM' in env) {
+        const version = parseInt((env.TERM_PROGRAM_VERSION || '').split('.')[0], 10);
+        switch(env.TERM_PROGRAM){
+            case 'iTerm.app':
+                return version >= 3 ? 3 : 2;
+            case 'Apple_Terminal':
+                return 2;
+        }
+    }
+    if (/-256(color)?$/i.test(env.TERM)) {
+        return 2;
+    }
+    if (/^screen|^xterm|^vt100|^vt220|^rxvt|color|ansi|cygwin|linux/i.test(env.TERM)) {
         return 1;
     }
-    "TURBOPACK unreachable";
+    if ('COLORTERM' in env) {
+        return 1;
+    }
+    return min;
 }
 function getSupportLevel(stream) {
     const level = supportsColor(stream, stream && stream.isTTY);

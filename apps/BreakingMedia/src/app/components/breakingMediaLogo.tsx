@@ -1,4 +1,4 @@
-const BreakingMediaLogo = (): string => {
+const BreakingMediaLogo = (width: number): string => {
     const fillColor = 'var(--foreground)'; // Automatically adapts to the current theme
     const highlightColor = 'var(--color-highlight)';
 
@@ -7,7 +7,7 @@ const BreakingMediaLogo = (): string => {
       <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlSpace="preserve"
-                width={260}
+                width="${width}"
                 height="auto"
                 version="1.1"
                 style={{

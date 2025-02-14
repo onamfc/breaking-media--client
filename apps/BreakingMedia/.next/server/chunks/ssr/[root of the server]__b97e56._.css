@@ -65,7 +65,7 @@ main.post-section {
   height: 1px;
   background-color: #1a1a1a;
   width: 100%;
-  margin: 0;
+  margin: 0 0 -1px;
 }
 
 .post-excerpt {
@@ -83,7 +83,7 @@ main.post-section {
 .section-category-title {
   background-color: #1a1a1a;
   color: #fff;
-  font-size: 14px;
+  font-size: .75rem;
   padding: 6px 8px;
   letter-spacing: .03rem;
   font-family: BreakingMediaAiFont, Arial, sans-serif;
@@ -144,7 +144,6 @@ h2:hover {
   }
 
   .section-category-title {
-    font-size: .9rem;
     text-align: center;
   }
 

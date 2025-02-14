@@ -10,8 +10,9 @@ export default function HeaderFooterWrapper({children}: { children: React.ReactN
     const shouldShowHeaderFooter = pathname !== "/";
 
     const route = "/articles";
-    const width = 260;
-    const breakingMediaSVG = BreakingMediaLogo(); // Call the BreakingMediaLogo function to get the SVG string
+    const width = 300;
+    const screenWidth = window.innerWidth;
+    const breakingMediaSVG = BreakingMediaLogo(width > screenWidth*.50 ? screenWidth*.50 : width ); // Call the BreakingMediaLogo function to get the SVG string
 
     return (
         <>

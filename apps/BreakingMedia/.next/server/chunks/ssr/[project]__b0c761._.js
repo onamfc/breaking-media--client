@@ -147,14 +147,14 @@ var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_
 __turbopack_esm__({
     "default": (()=>__TURBOPACK__default__export__)
 });
-const BreakingMediaLogo = ()=>{
+const BreakingMediaLogo = (width)=>{
     const fillColor = 'var(--foreground)'; // Automatically adapts to the current theme
     const highlightColor = 'var(--color-highlight)';
     return `
       <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlSpace="preserve"
-                width={260}
+                width="${width}"
                 height="auto"
                 version="1.1"
                 style={{
@@ -208,7 +208,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$BreakingMedia$2f$src
 ;
 ;
 function Home() {
-    const breakingMediaSVG = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$BreakingMedia$2f$src$2f$app$2f$components$2f$breakingMediaLogo$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])();
+    const breakingMediaSVG = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$BreakingMedia$2f$src$2f$app$2f$components$2f$breakingMediaLogo$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"])(100);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 gap-16 sm:p-4 sm:px-20 font-[family-name:var(--font-geist-sans)]",
         children: [
