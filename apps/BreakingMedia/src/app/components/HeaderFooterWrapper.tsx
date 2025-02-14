@@ -24,13 +24,21 @@ export default function HeaderFooterWrapper({ children }: { children: React.Reac
         return () => window.removeEventListener("resize", updateWidth); // Cleanup on unmount
     }, []);
 
-    const breakingMediaSVG = BreakingMediaLogo(width > screenWidth * 0.50 ? screenWidth * 0.50 : width);
+    const breakingMediaSVG = BreakingMediaLogo(
+        width > screenWidth * 0.50 ? screenWidth * 0.50 : width,
+        'var(--foreground)',
+        'var(--color-highlight)');
+
+    const breakingMediaFooterSVG = BreakingMediaLogo(
+        width > screenWidth * 0.50 ? screenWidth * 0.50 : width,
+        '#fff',
+        'var(--color-highlight)');
 
     return (
         <>
             {shouldShowHeaderFooter && <Header route={route} width={width} svg={breakingMediaSVG} />}
             {children}
-            {shouldShowHeaderFooter && <Footer svg={breakingMediaSVG} />}
+            {shouldShowHeaderFooter && <Footer svg={breakingMediaFooterSVG} />}
         </>
     );
 }

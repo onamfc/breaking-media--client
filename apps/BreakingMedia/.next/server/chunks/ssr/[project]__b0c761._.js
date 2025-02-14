@@ -147,9 +147,9 @@ var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_
 __turbopack_esm__({
     "default": (()=>__TURBOPACK__default__export__)
 });
-const BreakingMediaLogo = (width)=>{
-    const fillColor = 'var(--foreground)'; // Automatically adapts to the current theme
-    const highlightColor = 'var(--color-highlight)';
+const BreakingMediaLogo = (width, fill, highlight)=>{
+    const fillColor = fill; // Automatically adapts to the current theme
+    const highlightColor = highlight;
     return `
       <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -574,9 +574,9 @@ var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_
 __turbopack_esm__({
     "default": (()=>__TURBOPACK__default__export__)
 });
-const BreakingMediaLogo = (width)=>{
-    const fillColor = 'var(--foreground)'; // Automatically adapts to the current theme
-    const highlightColor = 'var(--color-highlight)';
+const BreakingMediaLogo = (width, fill, highlight)=>{
+    const fillColor = fill; // Automatically adapts to the current theme
+    const highlightColor = highlight;
     return `
       <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -650,7 +650,8 @@ function HeaderFooterWrapper({ children }) {
         window.addEventListener("resize", updateWidth);
         return ()=>window.removeEventListener("resize", updateWidth); // Cleanup on unmount
     }, []);
-    const breakingMediaSVG = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$BreakingMedia$2f$src$2f$app$2f$components$2f$breakingMediaLogo$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])(width > screenWidth * 0.50 ? screenWidth * 0.50 : width);
+    const breakingMediaSVG = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$BreakingMedia$2f$src$2f$app$2f$components$2f$breakingMediaLogo$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])(width > screenWidth * 0.50 ? screenWidth * 0.50 : width, 'var(--foreground)', 'var(--color-highlight)');
+    const breakingMediaFooterSVG = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$BreakingMedia$2f$src$2f$app$2f$components$2f$breakingMediaLogo$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])(width > screenWidth * 0.50 ? screenWidth * 0.50 : width, '#fff', 'var(--color-highlight)');
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             shouldShowHeaderFooter && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2f$components$2f$dist$2f$components$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Header"], {
@@ -659,15 +660,15 @@ function HeaderFooterWrapper({ children }) {
                 svg: breakingMediaSVG
             }, void 0, false, {
                 fileName: "[project]/apps/BreakingMedia/src/app/components/HeaderFooterWrapper.tsx",
-                lineNumber: 31,
+                lineNumber: 39,
                 columnNumber: 40
             }, this),
             children,
             shouldShowHeaderFooter && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2f$components$2f$dist$2f$components$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Footer"], {
-                svg: breakingMediaSVG
+                svg: breakingMediaFooterSVG
             }, void 0, false, {
                 fileName: "[project]/apps/BreakingMedia/src/app/components/HeaderFooterWrapper.tsx",
-                lineNumber: 33,
+                lineNumber: 41,
                 columnNumber: 40
             }, this)
         ]
