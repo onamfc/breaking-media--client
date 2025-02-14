@@ -627,10 +627,12 @@ __turbopack_esm__({
     "default": (()=>HeaderFooterWrapper)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/navigation.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2f$components$2f$dist$2f$components$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/packages/shared/components/dist/components/src/index.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$BreakingMedia$2f$src$2f$app$2f$components$2f$breakingMediaLogo$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/apps/BreakingMedia/src/app/components/breakingMediaLogo.tsx [app-ssr] (ecmascript)");
 "use client";
+;
 ;
 ;
 ;
@@ -641,8 +643,14 @@ function HeaderFooterWrapper({ children }) {
     const shouldShowHeaderFooter = pathname !== "/";
     const route = "/articles";
     const width = 300;
-    const screenWidth = window.innerWidth;
-    const breakingMediaSVG = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$BreakingMedia$2f$src$2f$app$2f$components$2f$breakingMediaLogo$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])(width > screenWidth * .50 ? screenWidth * .50 : width); // Call the BreakingMediaLogo function to get the SVG string
+    const [screenWidth, setScreenWidth] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const updateWidth = ()=>setScreenWidth(window.innerWidth);
+        updateWidth(); // Set initial screen width on mount
+        window.addEventListener("resize", updateWidth);
+        return ()=>window.removeEventListener("resize", updateWidth); // Cleanup on unmount
+    }, []);
+    const breakingMediaSVG = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$BreakingMedia$2f$src$2f$app$2f$components$2f$breakingMediaLogo$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])(width > screenWidth * 0.50 ? screenWidth * 0.50 : width);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
             shouldShowHeaderFooter && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$packages$2f$shared$2f$components$2f$dist$2f$components$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Header"], {
@@ -651,7 +659,7 @@ function HeaderFooterWrapper({ children }) {
                 svg: breakingMediaSVG
             }, void 0, false, {
                 fileName: "[project]/apps/BreakingMedia/src/app/components/HeaderFooterWrapper.tsx",
-                lineNumber: 19,
+                lineNumber: 31,
                 columnNumber: 40
             }, this),
             children,
@@ -659,7 +667,7 @@ function HeaderFooterWrapper({ children }) {
                 svg: breakingMediaSVG
             }, void 0, false, {
                 fileName: "[project]/apps/BreakingMedia/src/app/components/HeaderFooterWrapper.tsx",
-                lineNumber: 21,
+                lineNumber: 33,
                 columnNumber: 40
             }, this)
         ]

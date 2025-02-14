@@ -497,6 +497,10 @@ img, video {
   max-width: 1170px;
 }
 
+.resize {
+  resize: both;
+}
+
 .list-inside {
   list-style-position: inside;
 }
