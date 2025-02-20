@@ -10,7 +10,7 @@ export async function GET() {
     const posts = await fetch('https://api.breakingmedia.ai/posts')
         .then((res) => res.json())
         .catch(() => []);
-
+    console.log('posts', posts);
     // Generate XML for static pages
     const staticSitemap = staticPages
         .map((page) => `
