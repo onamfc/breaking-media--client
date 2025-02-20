@@ -14,7 +14,8 @@ export async function GET() {
             return [];
         });
 
-    console.log('posts', posts);
+    console.log('posts: ', posts);
+
     // Generate XML for static pages
     const staticSitemap = staticPages
         .map((page) => `
