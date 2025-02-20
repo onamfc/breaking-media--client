@@ -9,7 +9,11 @@ export async function GET() {
     // Fetch dynamic articles from your API
     const posts = await fetch('https://api.breakingmedia.ai/posts')
         .then((res) => res.json())
-        .catch(() => []);
+        .catch((err) => {
+            console.error('Error fetching posts:', err);
+            return [];
+        });
+
     console.log('posts', posts);
     // Generate XML for static pages
     const staticSitemap = staticPages
