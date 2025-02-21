@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import {fetchPosts} from "@/app/articles/page";
 
 export async function GET() {
     const baseUrl = 'https://breakingmedia.ai';
@@ -7,14 +8,7 @@ export async function GET() {
     const staticPages = ['', 'about', 'donate', 'articles'];
 
     // Fetch dynamic articles from your API
-    const posts = await fetch('https://api.breakingmedia.ai/posts')
-        .then((res) => res.json())
-        .catch((err) => {
-            console.error('Error fetching posts:', err);
-            return [];
-        });
-
-    console.log('posts: ', posts);
+    const posts = await fetchPosts();
 
     // Generate XML for static pages
     const staticSitemap = staticPages
