@@ -1,5 +1,22 @@
 import { NextResponse } from 'next/server';
-import {fetchPosts} from "@/app/articles/page";
+import {Post} from "@/app/interface/post";
+
+async function fetchSitemap(): Promise<Post[]> {
+    try {
+        const res = await fetch(`https://api.breakingmedia.ai/sitemap`, {
+            cache: 'no-store', // Prevent caching for real-time data
+            headers: {
+                'X-Origin-Domain': 'https://breakingmedia.ai',
+            },
+        });
+        if (!res.ok) {
+            throw new Error(`Failed to fetch posts: ${res.statusText}`);
+        }
+        return await res.json();
+    } catch (error) {
+        return [];
+    }
+}
 
 export async function GET() {
     const baseUrl = 'https://breakingmedia.ai';
@@ -8,7 +25,7 @@ export async function GET() {
     const staticPages = ['', 'about', 'donate', 'articles'];
 
     // Fetch dynamic articles from your API
-    const posts = await fetchPosts();
+    const posts = await fetchSitemap();
 
     // Generate XML for static pages
     const staticSitemap = staticPages

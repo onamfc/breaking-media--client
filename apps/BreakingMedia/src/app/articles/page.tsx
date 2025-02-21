@@ -16,7 +16,7 @@ interface Post {
     };
 }
 
-export async function fetchPosts(): Promise<Post[]> {
+async function fetchPosts(): Promise<Post[]> {
     try {
         const res = await fetch(`https://api.breakingmedia.ai/posts`, {
             cache: 'no-store', // Prevent caching for real-time data
