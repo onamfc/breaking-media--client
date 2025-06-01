@@ -149,7 +149,6 @@ export default async function SinglePostPage(props: { params: Promise<{ slug: st
                                 : 'https://via.placeholder.com/1920x1080'
                         }
                         alt={post.title}
-                        layout="responsive"
                         width={1170} // Maximum width
                         height={571} // Maximum height
                         objectFit="cover" // Ensures image covers container but maintains aspect ratio

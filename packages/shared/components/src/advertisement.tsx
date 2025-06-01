@@ -63,9 +63,11 @@ const Advertisement: React.FC<AdvertisementProps> = ({adType, adId}) => {
         );
     }
 
-    const imageUrl = ad.image_url.startsWith('http')
-        ? ad.image_url
-        : `https://breakingmedia.ai/storage/${ad.image_url}`;
+    // const imageUrl = ad.image_url.startsWith('http')
+    //     ? ad.image_url
+    //     : `https://breakingmedia.ai/storage/${ad.image_url}`;
+
+    const imageUrl = ad.image_url;
 
     return (
         <div

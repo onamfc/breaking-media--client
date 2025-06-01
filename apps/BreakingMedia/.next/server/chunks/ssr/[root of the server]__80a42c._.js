@@ -104,7 +104,6 @@ const FeaturedPost = ({ featuredPost })=>{
                     className: "image-section",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                         className: "article-image",
-                        layout: "responsive",
                         width: 1170,
                         height: 571,
                         objectFit: "cover",
@@ -133,7 +132,7 @@ const FeaturedPost = ({ featuredPost })=>{
                                 children: featuredPost.category?.name
                             }, void 0, false, {
                                 fileName: "[project]/apps/BreakingMedia/src/app/components/featuredPost/featured.tsx",
-                                lineNumber: 25,
+                                lineNumber: 24,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -142,7 +141,7 @@ const FeaturedPost = ({ featuredPost })=>{
                                 children: featuredPost.title
                             }, void 0, false, {
                                 fileName: "[project]/apps/BreakingMedia/src/app/components/featuredPost/featured.tsx",
-                                lineNumber: 26,
+                                lineNumber: 25,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -150,7 +149,7 @@ const FeaturedPost = ({ featuredPost })=>{
                                 children: featuredPost.excerpt
                             }, void 0, false, {
                                 fileName: "[project]/apps/BreakingMedia/src/app/components/featuredPost/featured.tsx",
-                                lineNumber: 29,
+                                lineNumber: 28,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -158,18 +157,18 @@ const FeaturedPost = ({ featuredPost })=>{
                                 children: featuredPost.author?.name
                             }, void 0, false, {
                                 fileName: "[project]/apps/BreakingMedia/src/app/components/featuredPost/featured.tsx",
-                                lineNumber: 30,
+                                lineNumber: 29,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/BreakingMedia/src/app/components/featuredPost/featured.tsx",
-                        lineNumber: 24,
+                        lineNumber: 23,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/apps/BreakingMedia/src/app/components/featuredPost/featured.tsx",
-                    lineNumber: 23,
+                    lineNumber: 22,
                     columnNumber: 17
                 }, this)
             ]
@@ -265,7 +264,6 @@ const BlogClient = ({ posts, featuredPost })=>{
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                                 className: "article-image",
-                                                layout: "responsive",
                                                 width: 360,
                                                 height: 240,
                                                 objectFit: "cover",
@@ -285,7 +283,7 @@ const BlogClient = ({ posts, featuredPost })=>{
                                                         children: post.category?.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/BreakingMedia/src/app/articles/blogClient.tsx",
-                                                        lineNumber: 53,
+                                                        lineNumber: 52,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -293,14 +291,14 @@ const BlogClient = ({ posts, featuredPost })=>{
                                                         children: post.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/BreakingMedia/src/app/articles/blogClient.tsx",
-                                                        lineNumber: 54,
+                                                        lineNumber: 53,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: post.excerpt
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/BreakingMedia/src/app/articles/blogClient.tsx",
-                                                        lineNumber: 55,
+                                                        lineNumber: 54,
                                                         columnNumber: 41
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -308,13 +306,13 @@ const BlogClient = ({ posts, featuredPost })=>{
                                                         children: post.author?.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/BreakingMedia/src/app/articles/blogClient.tsx",
-                                                        lineNumber: 56,
+                                                        lineNumber: 55,
                                                         columnNumber: 41
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/apps/BreakingMedia/src/app/articles/blogClient.tsx",
-                                                lineNumber: 52,
+                                                lineNumber: 51,
                                                 columnNumber: 37
                                             }, this)
                                         ]
@@ -3093,7 +3091,7 @@ const _routercontextsharedruntime = __turbopack_require__("[project]/node_module
 const _imageloader = /*#__PURE__*/ _interop_require_default._(__turbopack_require__("[project]/node_modules/next/dist/shared/lib/image-loader.js [app-ssr] (ecmascript)"));
 const _usemergedref = __turbopack_require__("[project]/node_modules/next/dist/client/use-merged-ref.js [app-ssr] (ecmascript)");
 // This is replaced by webpack define plugin
-const configEnv = ("TURBOPACK compile-time value", JSON.parse('{"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":false,"domains":[],"remotePatterns":[{"protocol":"https","hostname":"api.breakingmedia.ai","pathname":"/storage/blog-images/**"},{"protocol":"https","hostname":"api.breakingmedia.ai","pathname":"/storage/headshot/**"}]}'));
+const configEnv = ("TURBOPACK compile-time value", JSON.parse('{"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":true,"domains":[],"remotePatterns":[{"protocol":"https","hostname":"api.breakingmedia.ai","pathname":"/storage/blog-images/**"},{"protocol":"https","hostname":"api.breakingmedia.ai","pathname":"/storage/headshot/**"}]}'));
 if (typeof window === 'undefined') {
     ;
     globalThis.__NEXT_IMAGE_IMPORTED = true;
@@ -3412,7 +3410,7 @@ function getImageProps(imgProps) {
     const { props } = (0, _getimgprops.getImgProps)(imgProps, {
         defaultLoader: _imageloader.default,
         // This is replaced by webpack define plugin
-        imgConf: ("TURBOPACK compile-time value", JSON.parse('{"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":false,"domains":[],"remotePatterns":[{"protocol":"https","hostname":"api.breakingmedia.ai","pathname":"/storage/blog-images/**"},{"protocol":"https","hostname":"api.breakingmedia.ai","pathname":"/storage/headshot/**"}]}'))
+        imgConf: ("TURBOPACK compile-time value", JSON.parse('{"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":true,"domains":[],"remotePatterns":[{"protocol":"https","hostname":"api.breakingmedia.ai","pathname":"/storage/blog-images/**"},{"protocol":"https","hostname":"api.breakingmedia.ai","pathname":"/storage/headshot/**"}]}'))
     });
     // Normally we don't care about undefined props because we pass to JSX,
     // but this exported function could be used by the end user for anything

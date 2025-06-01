@@ -1,6 +1,7 @@
 # *
 User-agent: *
-Allow: /
+Disallow: /api/
+Disallow: /storage/
 
 # Sitemaps
 Sitemap: https://breakingmedia.ai/api/sitemap

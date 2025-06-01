@@ -38,7 +38,6 @@ const ListPage = ({posts, featuredPost}: { posts: Post[]; featuredPost: Post | n
                                 <article className="post" key={post.id}>
                                     <Image
                                         className="article-image"
-                                        layout="responsive"
                                         width={360} // Maximum width
                                         height={240} // Maximum height
                                         objectFit="cover"

@@ -12,7 +12,6 @@ const FeaturedPost = ({featuredPost}: { featuredPost: Post }) => {
             <div id="featured-article--content">
                 <div className="image-section">
                     <Image className="article-image"
-                           layout="responsive"
                            width={1170} // Maximum width
                            height={571} // Maximum height
                            objectFit="cover"

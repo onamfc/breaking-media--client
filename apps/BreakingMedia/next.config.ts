@@ -25,6 +25,14 @@ const nextConfig: NextConfig = {
             },
         ];
     },
+    async rewrites() {
+        return [
+            {
+                source: '/media/:path*',
+                destination: 'https://api.breakingmedia.ai/storage/:path*',
+            },
+        ];
+    },
 };
 
 export default nextConfig;

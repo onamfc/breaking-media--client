@@ -6,7 +6,9 @@
   src: url('/fonts/breakingmedia.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-}:root {
+}
+
+:root {
   --background: #ffffff;
   --foreground: #171717;
   --color-primary: #1a1a1a; /* Category default */
@@ -17,29 +19,8 @@
    --color-highlight: #CD2C02;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --color-primary: #ededed; /* Adjusted for dark mode */
-    --color-secondary: #999; /* Adjusted for dark mode */
-    --color-category: #aaaaaa; /* Category text color for dark mode */
-    --color-excerpt: #aaaaaa; /* Excerpt text color for dark mode */
-    --color-border: #444; /* Border color for dark mode */
-  }
 
 
-}
-/* Class-based dark mode overrides media query */
-.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --color-primary: #ededed; /* Adjusted for dark mode */
-  --color-secondary: #999; /* Adjusted for dark mode */
-  --color-category: #aaaaaa; /* Category text color for dark mode */
-  --color-excerpt: #aaaaaa; /* Excerpt text color for dark mode */
-  --color-border: #444; /* Border color for dark mode */
-}
 
 .light {
   --background: #ffffff;

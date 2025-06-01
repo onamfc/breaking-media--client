@@ -680,28 +680,6 @@ img, video {
   --color-highlight: #cd2c02;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --color-primary: #ededed;
-    --color-secondary: #999;
-    --color-category: #aaa;
-    --color-excerpt: #aaa;
-    --color-border: #444;
-  }
-}
-
-.dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --color-primary: #ededed;
-  --color-secondary: #999;
-  --color-category: #aaa;
-  --color-excerpt: #aaa;
-  --color-border: #444;
-}
-
 .light {
   --background: #fff;
   --foreground: #171717;

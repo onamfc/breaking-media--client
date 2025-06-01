@@ -1,6 +1,6 @@
 {
-  "/page": "app/page.js",
-  "/api/sitemap/route": "app/api/sitemap/route.js",
   "/articles/page": "app/articles/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/articles/[slug]/page": "app/articles/[slug]/page.js"
 }
