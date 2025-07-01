@@ -1,15 +1,15 @@
 # BreakingMedia.ai
 
-BreakingMedia.ai is an AI-powered editorial platform that delivers dynamic, personalized articles through a modern publishing interface. This repository contains only the client-side application, built using Next.js and TypeScript. While it is currently configured to consume data from the private BreakingMedia.ai API—which generates, stores, and serves AI-created content and images—the frontend is designed to be flexible and can integrate with any compatible API that provides similar data structures.
+BreakingMedia.ai is an AI-powered editorial platform that delivers dynamic, personalized articles through a modern publishing interface. This repository contains only the client-side application, built using Next.js and TypeScript. While it is currently configured to consume data from the private BreakingMedia.ai API which generates, stores, and serves AI-created content and images. The frontend is designed to be flexible and can integrate with any compatible API that provides similar data structures.
 
 This codebase has been made public to showcase engineering capability, design architecture, and frontend best practices. You can run the client locally or in production, but it will not display content without connecting to a suitable backend API.
 ## 🌐 Project Structure
 
 - **Frontend**: [Next.js](https://nextjs.org/) with TypeScript
-- **Backend**: [Laravel](https://laravel.com/) (assumed from previous context)
+- **Backend**: [Laravel](https://laravel.com/)
 - **Styling**: Tailwind CSS & custom styles
 - **Content Source**: REST API at `NEXT_PUBLIC_API_URL`
-- **Fonts**: Google Fonts (Oswald)
+
 - **Image Hosting**: Stored in Laravel's public storage and accessed via API
 - **SEO**: Dynamic OpenGraph and JSON-LD metadata
 
