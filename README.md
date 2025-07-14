@@ -45,12 +45,12 @@ Defines visual layout and typography, especially for:
 ---
 
 ## 🛠️ Features
-- ⚡ Server-side rendering for fast initial page loads
-- 🔍 Dynamic SEO metadata generation (title, OG, structured data)
-- 🖼️ Featured article support
-- 🗂️ Categorized article rendering
-- 📱 Responsive layout with semantic HTML and accessible navigation
-- 🔒 Safe dangerouslySetInnerHTML usage for rendering HTML from the API
+- Server-side rendering for fast initial page loads
+- Dynamic SEO metadata generation (title, OG, structured data)
+- Featured article support
+- Categorized article rendering
+- Responsive layout with semantic HTML and accessible navigation
+- Safe dangerouslySetInnerHTML usage for rendering HTML from the API
 
 
 ## 🚀 Getting Started
@@ -59,23 +59,3 @@ Defines visual layout and typography, especially for:
 
 - Node.js (v18+ recommended)
 - Laravel backend running (serving `api/posts` and `api/post/:slug`)
-
-### Installation
-
-```bash
-# Clone the repo
-git clone https://github.com/your-org/breakingmedia.git
-
-# Navigate into the frontend project
-cd breakingmedia
-
-# Install dependencies
-npm install
-
-# Set up your environment variables
-cp .env.local.example .env.local
-# Edit .env.local to include:
-# NEXT_PUBLIC_API_URL=http://localhost:8000/api
-
-# Run the dev server
-npm run dev
