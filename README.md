@@ -3,7 +3,7 @@
 BreakingMedia.ai is an AI-powered editorial platform that delivers dynamic, personalized articles through a modern publishing interface. This repository contains only the client-side application, built using Next.js and TypeScript. While it is currently configured to consume data from the private BreakingMedia.ai API which generates, stores, and serves AI-created content and images. The frontend is designed to be flexible and can integrate with any compatible API that provides similar data structures.
 
 This codebase has been made public to showcase engineering capability, design architecture, and frontend best practices. You can run the client locally or in production, but it will not display content without connecting to a suitable backend API.
-## 🌐 Project Structure
+## Project Structure
 
 - **Frontend**: [Next.js](https://nextjs.org/) with TypeScript
 - **Backend**: [Laravel](https://laravel.com/)
@@ -15,7 +15,7 @@ This codebase has been made public to showcase engineering capability, design ar
 
 ---
 
-## 📁 Key Files and Components
+## Key Files and Components
 
 ### `/app/page.tsx`
 Fetches all blog posts server-side and passes them to the client-side renderer.
@@ -44,7 +44,7 @@ Defines visual layout and typography, especially for:
 
 ---
 
-## 🛠️ Features
+## 🛠Features
 - Server-side rendering for fast initial page loads
 - Dynamic SEO metadata generation (title, OG, structured data)
 - Featured article support
@@ -53,7 +53,7 @@ Defines visual layout and typography, especially for:
 - Safe dangerouslySetInnerHTML usage for rendering HTML from the API
 
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
