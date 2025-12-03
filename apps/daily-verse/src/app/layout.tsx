@@ -29,11 +29,11 @@ export default function RootLayout({
         <html lang="en">
         <head>
             <title>Daily Verse</title>
-            <Script
-                src="https://xant.us/widget/xantus-production.js?s=dailyverse"
-                type="application/javascript"
-                strategy="afterInteractive"
-            />
+            {/*<Script*/}
+            {/*    src="https://xant.us/widget/xantus-production.js?s=dailyverse"*/}
+            {/*    type="application/javascript"*/}
+            {/*    strategy="afterInteractive"*/}
+            {/*/>*/}
             <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/api/rss"/>
             <link rel="sitemap" type="application/xml" title="Sitemap" href="/api/sitemap"/>
             <link rel="manifest" href="/manifest.json"/>

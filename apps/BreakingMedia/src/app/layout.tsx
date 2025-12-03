@@ -30,11 +30,11 @@ export default function RootLayout({
         <html lang="en">
         <head>
             <title>Breaking Media</title>
-            <Script
-                src="https://xant.us/widget/xantus-production.js?s=breakingmedia"
-                type="application/javascript"
-                strategy="afterInteractive"
-            />
+            {/*<Script*/}
+            {/*    src="https://xant.us/widget/xantus-production.js?s=breakingmedia"*/}
+            {/*    type="application/javascript"*/}
+            {/*    strategy="afterInteractive"*/}
+            {/*/>*/}
             <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/api/rss"/>
             <link rel="sitemap" type="application/xml" title="Sitemap" href="/api/sitemap"/>
             <script async
